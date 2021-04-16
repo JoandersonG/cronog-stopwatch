@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.Main">
-  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="1" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="1" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="56"/>
@@ -37,49 +37,22 @@
           <text value="Reiniciar"/>
         </properties>
       </component>
-      <component id="118d6" class="javax.swing.JLabel">
+      <component id="dc49b" class="javax.swing.JLabel" binding="txtTime">
         <constraints>
-          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="6" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Courier New" size="36" style="1"/>
-          <text value="56"/>
+          <text value="00:00"/>
         </properties>
       </component>
-      <component id="e6843" class="javax.swing.JLabel">
+      <component id="7c140" class="javax.swing.JLabel" binding="txtHours">
         <constraints>
-          <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Courier New" size="36" style="1"/>
-          <text value=":"/>
-        </properties>
-      </component>
-      <component id="5e7da" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Courier New" size="36" style="1"/>
-          <text value=":"/>
-        </properties>
-      </component>
-      <component id="40e60" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Courier New" size="36" style="1"/>
-          <text value="5"/>
-        </properties>
-      </component>
-      <component id="dc49b" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="6" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Courier New" size="36" style="1"/>
-          <text value="30"/>
+          <text value="0:"/>
         </properties>
       </component>
     </children>
