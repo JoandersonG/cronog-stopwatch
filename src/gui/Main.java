@@ -11,9 +11,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
-    private JButton btIniciar;
-    private JButton btPausar;
-    private JButton brReiniciar;
+    private JButton btStartPause;
+    private JButton btPause;
+    private JButton brRestart;
     private JPanel panelMain;
     private JLabel txtTime;
     private JLabel txtMinutes;
