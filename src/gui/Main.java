@@ -18,8 +18,6 @@ public class Main {
     private JButton brRestart;
     private JPanel panelMain;
     private JLabel txtTime;
-    private JLabel txtMinutes;
-    private JLabel txtHours;
 
     private boolean shouldStop;
     private int seconds;
@@ -67,8 +65,7 @@ public class Main {
     }
 
     private void clearTime() {
-        txtTime.setText("00:00");
-        txtHours.setText("00:");
+        txtTime.setText("00:00:00");
         this.seconds = 0;
         this.minutes = 0;
         this.hours = 0;
@@ -101,9 +98,9 @@ public class Main {
                         this.minutes = 0;
                     }
 
-                    txtHours.setText(String.valueOf(((this.hours < 10) ? ("0" + this.hours) : this.hours) + ":"));
                     txtTime.setText(String.valueOf(
-                            (((this.minutes < 10) ? ("0" + this.minutes) : this.minutes) + ":")
+                            (((this.hours < 10) ? ("0" + this.hours) : this.hours) + ":")
+                            +(((this.minutes < 10) ? ("0" + this.minutes) : this.minutes) + ":")
                             + ((this.seconds < 10) ? ("0" + this.seconds) : this.seconds)
                     ));
 
