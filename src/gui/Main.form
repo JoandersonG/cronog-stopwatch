@@ -26,7 +26,7 @@
         <properties>
           <font name="Courier New" size="60" style="1"/>
           <foreground color="-1754827"/>
-          <text value="0:"/>
+          <text value="00:"/>
         </properties>
       </component>
       <component id="75b97" class="javax.swing.JButton" binding="brRestart">
