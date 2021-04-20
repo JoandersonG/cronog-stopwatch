@@ -1,23 +1,30 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
-    private JButton btStartPause;
+    private JButton btStart;
     private JButton btPause;
     private JButton brRestart;
     private JPanel panelMain;
     private JLabel txtTime;
     private JLabel txtMinutes;
     private JLabel txtHours;
+
+    private boolean shouldStop;
+    private int seconds;
+    private int minutes;
+    private int hours;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("CronoG");
@@ -28,17 +35,79 @@ public class Main {
     }
 
     public Main() {
-        SimpleDateFormat timeFormat = new SimpleDateFormat("mm:ss");
-        Instant start = Instant.now();
+
+        btStart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                shouldStop = false;
+                runStopwatch();
+                btStart.setEnabled(false);
+                btPause.setEnabled(true);
+            }
+        });
+        btPause.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                pauseStopWatch();
+                btStart.setEnabled(true);
+                btPause.setEnabled(false);
+            }
+        });
+        brRestart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                btStart.setEnabled(true);
+                btPause.setEnabled(false);
+                pauseStopWatch();
+                clearTime();
+
+
+            }
+        });
+    }
+
+    private void clearTime() {
+        txtTime.setText("00:00");
+        txtHours.setText("00:");
+        this.seconds = 0;
+        this.minutes = 0;
+        this.hours = 0;
+    }
+
+    private void pauseStopWatch() {
+        shouldStop = true;
+    }
+
+    private void runStopwatch() {
+        SimpleDateFormat secondsFormat = new SimpleDateFormat("ss");
+        SimpleDateFormat minutesFormat = new SimpleDateFormat("mm");
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
         scheduler.scheduleAtFixedRate(
                 () -> {
-                    Instant end = Instant.now();
-                    Duration timeElapsed = Duration.between(start, end);
-                    String hours = String.valueOf(ChronoUnit.HOURS.between(start,end));
-                    txtHours.setText(hours +":");
-                    txtTime.setText(timeFormat.format(timeElapsed.toMillis()));
-                }, 1, 1, TimeUnit.SECONDS);
+                    if (shouldStop) {
+                        shouldStop = false;
+                        scheduler.shutdown();
+                        return;
+                    }
 
+                    if(this.seconds > 58) {
+                        this.minutes++;
+                        this.seconds = 0;
+                    } else {
+                        this.seconds++;
+                    }
+                    if (this.minutes > 58) {
+                        this.hours++;
+                        this.minutes = 0;
+                    }
+
+                    txtHours.setText(String.valueOf(((this.hours < 10) ? ("0" + this.hours) : this.hours) + ":"));
+                    txtTime.setText(String.valueOf(
+                            (((this.minutes < 10) ? ("0" + this.minutes) : this.minutes) + ":")
+                            + ((this.seconds < 10) ? ("0" + this.seconds) : this.seconds)
+                    ));
+
+
+                }, 1, 1, TimeUnit.SECONDS);
     }
 }
