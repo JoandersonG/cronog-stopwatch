@@ -2,49 +2,21 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.Main">
   <grid id="27dc6" binding="panelMain" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="776" height="82"/>
+      <xy x="20" y="20" width="1017" height="415"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-1"/>
+      <foreground color="-1051905"/>
+    </properties>
     <border type="none"/>
     <children>
-      <component id="dc49b" class="javax.swing.JLabel" binding="txtTime">
-        <constraints>
-          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="1.0"/>
-        </constraints>
-        <properties>
-          <font name="Courier New" size="60" style="1"/>
-          <foreground color="-1754827"/>
-          <text value="00:00:00"/>
-        </properties>
-      </component>
-      <component id="75b97" class="javax.swing.JButton" binding="brRestart">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="1.0"/>
-        </constraints>
-        <properties>
-          <background color="-11684180"/>
-          <enabled value="true"/>
-          <foreground color="-394507"/>
-          <horizontalAlignment value="0"/>
-          <icon value="gui/icons/outline_restart_alt_black_24dp.png"/>
-          <text value="Reiniciar"/>
-        </properties>
-      </component>
-      <hspacer id="e24f2">
-        <constraints>
-          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="1.0" weighty="0.0"/>
-        </constraints>
-      </hspacer>
       <component id="dc600" class="javax.swing.JButton" binding="btStart">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="1.0"/>
         </constraints>
         <properties>
-          <background color="-11684180"/>
+          <background color="-12762549"/>
           <foreground color="-394507"/>
           <horizontalAlignment value="0"/>
           <icon value="gui/icons/outline_play_arrow_black_24dp.png"/>
@@ -53,22 +25,76 @@
       </component>
       <component id="d0b94" class="javax.swing.JButton" binding="btPause">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="1.0"/>
         </constraints>
         <properties>
-          <background color="-11684180"/>
+          <background color="-12762549"/>
           <foreground color="-394507"/>
           <icon value="gui/icons/outline_pause_black_24dp.png"/>
           <text value="Pausar"/>
         </properties>
       </component>
-      <hspacer id="2ca6a">
+      <hspacer id="e24f2">
         <constraints>
-          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="1.0" weighty="0.0"/>
         </constraints>
       </hspacer>
+      <hspacer id="2ca6a">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="0.0"/>
+        </constraints>
+      </hspacer>
+      <component id="c6d91" class="javax.swing.JButton" binding="btPlusMinute">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <background color="-12762549"/>
+          <foreground color="-394507"/>
+          <icon value="gui/icons/outline_pause_black_24dp.png"/>
+          <text value="+1 minuto"/>
+        </properties>
+      </component>
+      <component id="75b97" class="javax.swing.JButton" binding="brRestart">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <background color="-12762549"/>
+          <enabled value="true"/>
+          <foreground color="-394507"/>
+          <horizontalAlignment value="0"/>
+          <icon value="gui/icons/outline_restart_alt_black_24dp.png"/>
+          <text value="Reiniciar"/>
+        </properties>
+      </component>
+      <component id="4f5bf" class="javax.swing.JLabel" binding="txtSessionAmount">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <font name="Courier New" size="18" style="1"/>
+          <foreground color="-12762549"/>
+          <text value="Total de sessões: 0"/>
+        </properties>
+      </component>
+      <component id="dc49b" class="javax.swing.JLabel" binding="txtTime">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <font name="Courier New" size="60" style="1"/>
+          <foreground color="-1754827"/>
+          <text value="00:00:00"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
